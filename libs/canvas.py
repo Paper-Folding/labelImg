@@ -528,6 +528,7 @@ class Canvas(QWidget):
 
         # Paint rect
         if self.current is not None and len(self.line) == 2:
+            # when drawing 对角线
             left_top = self.line[0]
             right_bottom = self.line[1]
             rect_width = right_bottom.x() - left_top.x()

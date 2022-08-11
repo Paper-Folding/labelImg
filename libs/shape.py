@@ -87,9 +87,10 @@ class Shape(object):
     def paint(self, painter):
         if self.points:
             color = self.select_line_color if self.selected else self.line_color
+            self.line_color.setAlpha(255)
             pen = QPen(color)
             # Try using integer sizes for smoother drawing(?)
-            pen.setWidth(max(1, int(round(2.0 / self.scale))))
+            pen.setWidth(max(5, int(round(2.0 / self.scale))))
             painter.setPen(pen)
 
             line_path = QPainterPath()
@@ -132,6 +133,7 @@ class Shape(object):
 
             if self.fill:
                 color = self.select_fill_color if self.selected else self.fill_color
+                color.setAlpha(100)
                 painter.fillPath(line_path, color)
 
     def draw_vertex(self, path, i):
