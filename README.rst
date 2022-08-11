@@ -1,6 +1,14 @@
 LabelImg
 ========
 
+!!! Run step !!!
+.. code:: shell
+
+    pip install pyqt5 lxml
+    # In root of project, execute:  
+    pyrcc5 -o libs/resources.py resources.qrc
+
+
 .. image:: https://img.shields.io/pypi/v/labelimg.svg
         :target: https://pypi.python.org/pypi/labelimg
 
