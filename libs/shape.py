@@ -122,14 +122,14 @@ class Shape(object):
                     min_y = min(min_y, point.y())
                 if min_x != sys.maxsize and min_y != sys.maxsize:
                     font = QFont()
-                    font.setPointSize(self.label_font_size)
+                    font.setPointSize(self.label_font_size+5)
                     font.setBold(True)
                     painter.setFont(font)
                     if self.label is None:
                         self.label = ""
                     if min_y < min_y_label:
                         min_y += min_y_label
-                    painter.drawText(int(min_x), int(min_y), self.label)
+                    painter.drawText(int(min_x), int(min_y-8), self.label)
 
             if self.fill:
                 color = self.select_fill_color if self.selected else self.fill_color
